@@ -1,0 +1,31 @@
+Zomato-Project
+|
+|-- src
+|     |--config
+|     |      |--db.js (Database Configuration)
+|     |      
+|     |--models
+|     |      |--restaurant.js
+|     |      |--user.js
+|     |      
+|     |--controllers
+|     |      |--restaurant.controller.js
+|     |      |--user.controller.js
+|     |
+|     |--routes
+|     |      |--restaurant.route.js
+|     |      |--user.route.js
+|     |
+|     |--utils (Any utilities used across the project - token_generator or any helper functions)
+|     |     
+|     |--app.js (Express app)
+|
+|-- node_modules
+|
+|-- .env (Environment Variables like DB credentials ,secret for token )
+|
+|-- package.json (For npm packages/modules, scripts and project information)
+|
+|-- package-lock.json
+|
+|-- README.md (Information about your project and how to run it locally/get it up and running)
