@@ -1,0 +1,49 @@
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('zomato', 'username', 'password', {
+    host: 'localhost',
+    dialect: 'mysql' || 'sqlite' || 'postgres' || 'mssql'
+});
+
+const Model = Sequelize.Model;
+
+class User extends Model;
+
+User.init({
+    // Assuming you have a unique user id
+    id: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    // A full name for the user
+    fullName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    // email
+    email: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+        validate: {
+            isEmail : true
+        }
+    },
+    // password
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+}, {
+    sequelize,
+    modelName: 'user'
+});
+
+sequelize.sync()
+    .then(async () => {
+        console.log("`User` table has been successfully created, if one doesn't exist");
+    })
+    .catch(error => console.log("This error occurred", error));
+
+module.exports = User;
