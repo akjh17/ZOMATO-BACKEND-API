@@ -1,0 +1,16 @@
+npm install express mysql
+const mysql = require('mysql');
+
+let conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'your-password',
+    database: 'zomato'
+});
+
+conn.connect((err) =>{
+  if(err) throw err;
+  console.log('Connected to database');
+});
+
+module.exports = conn;
