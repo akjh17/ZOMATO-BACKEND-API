@@ -1,0 +1,7 @@
+npm install --save-dev nodemon
+"scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+}
+npm run dev
+app.use(express.json());
